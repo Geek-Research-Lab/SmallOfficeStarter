@@ -1,4 +1,4 @@
-### Welcome
+### Welcome!
 <b>Small Office Starter</b> is a free offline software package that has Front Desk, HR/Payroll and Accounts.
 
 <b>Three Modules</b> <br>
