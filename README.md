@@ -20,6 +20,10 @@ And <a href="https://github.com/Geek-Research-Lab/SmallOfficeStarter/wiki/Docume
 username - <i>frontdesk</i> <br>
 password - <i>frontdesk</i> <br>
 
+### Screenshots
+(1) Front Desk (Default Homepage) <br>
+![](https://raw.githubusercontent.com/Geek-Research-Lab/SmallOfficeStarter/master/Small%20Office%20Starter/screenshots/frontdesk.jpg)
+
 ### Further Details
 
 Introduction Wiki => <a href="https://github.com/Geek-Research-Lab/SmallOfficeStarter/wiki">Click here!</a>
