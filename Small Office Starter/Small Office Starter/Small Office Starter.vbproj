@@ -86,11 +86,9 @@
     <ApplicationIcon>geekresearchlab.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FrontDesk">
+    <Reference Include="FrontDesk, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Small Office Starter Libraries\FrontDesk\FrontDesk\bin\x86\Debug\FrontDesk.dll</HintPath>
-    </Reference>
-    <Reference Include="FrontDeskControl">
-      <HintPath>..\..\Small Office Starter Control Libraries\FrontDeskControl\FrontDeskControl\bin\x86\Debug\FrontDeskControl.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
@@ -221,6 +219,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

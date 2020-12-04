@@ -1,6 +1,8 @@
 ﻿Public Class FrontDesk1
     ' init
     Dim get_language As String = ""
+    ' share dir
+    'Public yyy As String
     ' exit
     Private Sub Exit_Button_Click(sender As Object, e As EventArgs) Handles Exit_Button.Click
         End
@@ -30,7 +32,10 @@
         ' default type
         FrontDesk_Type.SelectedIndex = 0
         ' generate id
-        FrontDesk_ID.Text = FrontDesk.RandomID()
+        FrontDesk_ID.Text = FrontDesk.RandomID().ToString()
+        ' share dir
+        'yyy = System.Environment.CurrentDirectory.ToString()
+        'MsgBox(FrontDesk.ListDirectory.lo_lo(yyy.ToString()))
         ' logo
         FrontDesk_Logo.BackgroundImage = FrontDesk.Load_Logo()
         Try
@@ -241,9 +246,29 @@ FrontDesk_Description.Text.ToString()))
         FrontDesk_ID.Text = FrontDesk.RandomID()
     End Sub
     ' list enquiries
+    Dim doc_loc As XDocument = XDocument.Load("Resources/location.xml")
+    Public xyz As String
     Private Sub FrontDesk_GetInfo_Enquiry_Click(sender As Object, e As EventArgs) Handles FrontDesk_GetInfo_Enquiry.Click
-        Dim mm As FrontDeskControl.EnquiriesList = New FrontDeskControl.EnquiriesList()
-        mm.Show()
+        ' open main
+        'Dim mm As FrontDeskControl.EnquiriesList = New FrontDeskControl.EnquiriesList()
+        'mm.Show()
+        Dim EnquiriesList_Body As WebBrowser = New WebBrowser()
+        EnquiriesList_Body.Visible = False
+        Dim location As IEnumerable(Of XElement) = doc_loc.Descendants("location")
+        For Each locations In location
+            xyz = locations.Element("path").Value
+        Next
+        EnquiriesList_Body.Navigate(xyz)
+        MsgBox("Data Loaded")
+        EnquiriesList_Body.ShowPrintPreviewDialog()
+    End Sub
+    ' list visitors / interviewees
+    Private Sub FrontDesk_GetInfo_Visitors_Click(sender As Object, e As EventArgs) Handles FrontDesk_GetInfo_Visitors.Click
+        MsgBox("this will be updated soon")
+    End Sub
+    ' list contacts
+    Private Sub FrontDesk_GetInfo_Contacts_Click(sender As Object, e As EventArgs) Handles FrontDesk_GetInfo_Contacts.Click
+        MsgBox("this will be updated soon")
     End Sub
 End Class
 ''
